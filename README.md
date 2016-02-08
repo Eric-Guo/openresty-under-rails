@@ -38,4 +38,9 @@ cd ..
 rm -rf openresty-1.9.7.3
 cd /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.24/
 find . -name "*.o" -type f -delete
+cd /etc/init.d
+wget https://gist.github.com/Eric-Guo/ae0a63b22e2be1624836/raw/8efdc77258915b1b21dfb48fc0b43b2e14c8a545/nginx
+chmod 755 nginx
+update-rc.d -f nginx remove
+update-rc.d -f nginx defaults
 ```
