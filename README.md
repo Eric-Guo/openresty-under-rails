@@ -12,17 +12,17 @@ You need compile your version of passenger from source code instead of using off
 
 ```bash
 apt-get remove passenger # if you already install passenger
-wget https://openresty.org/download/openresty-1.9.7.3.tar.gz
-tar xvfz openresty-1.9.7.3.tar.gz
+wget https://openresty.org/download/openresty-1.9.7.4.tar.gz
+tar xvfz openresty-1.9.7.4.tar.gz
 gem install passenger
 passenger-install-nginx-module
 # Choose 2,No: I want to customize my Nginx installation. (for advanced users)
-# Give nginx source code location: /root/openresty-1.9.7.3/bundle/nginx-1.9.7
+# Give nginx source code location: /root/openresty-1.9.7.4/bundle/nginx-1.9.7
 # Specify a prefix directory: /opt/openresty
 # Confirm will install an an entirely new Nginx installation.
-# Record generated script, like: sh ./configure --prefix='/opt/openresty' --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --with-cc-opt=-Wno-error --with-ld-opt='' --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.24/src/nginx_module'
+# Record generated script, like: sh ./configure --prefix='/opt/openresty' --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --with-cc-opt=-Wno-error --with-ld-opt='' --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/src/nginx_module'
 # Confirm yes by enter
-cd openresty-1.9.7.3
+cd openresty-1.9.7.4
 # Or add more options following https://openresty.org/#Installation
 ./configure --prefix=/opt/openresty \
             --with-pcre-jit \
@@ -31,12 +31,12 @@ cd openresty-1.9.7.3
             --with-http_ssl_module \
             --with-http_gzip_static_module \
             --with-http_stub_status_module \
-            --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.24/src/nginx_module'
+            --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/src/nginx_module'
 make
 make install
 cd ..
-rm -rf openresty-1.9.7.3
-cd /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.24/
+rm -rf openresty-1.9.7.4
+cd /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/
 find . -name "*.o" -type f -delete
 vi /opt/openresty/nginx/conf/nginx.conf # add pid /run/nginx.pid;
 cd /etc/init.d
