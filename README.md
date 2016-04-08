@@ -20,7 +20,7 @@ passenger-install-nginx-module
 # Give nginx source code location: /root/openresty-1.9.7.4/bundle/nginx-1.9.7
 # Specify a prefix directory: /opt
 # Confirm will install an an entirely new Nginx installation.
-# Record generated script, like: sh ./configure --prefix='/opt' --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --with-cc-opt=-Wno-error --with-ld-opt='' --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/src/nginx_module'
+# Record generated script, like: sh ./configure --prefix='/opt' --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --with-cc-opt=-Wno-error --with-ld-opt='' --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.27/src/nginx_module'
 # Confirm yes by enter
 cd openresty-1.9.7.4
 # Or add more options following https://openresty.org/#Installation
@@ -31,12 +31,12 @@ cd openresty-1.9.7.4
             --with-http_ssl_module \
             --with-http_gzip_static_module \
             --with-http_stub_status_module \
-            --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/src/nginx_module'
+            --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.27/src/nginx_module'
 make
 make install
 cd ..
 rm -rf openresty-1.9.7.4
-cd /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.26/
+cd /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.27/
 find . -name "*.o" -type f -delete
 vi /opt/nginx/conf/nginx.conf # add pid /run/nginx.pid;
 cd /etc/init.d
