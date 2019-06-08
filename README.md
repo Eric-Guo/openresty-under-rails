@@ -19,7 +19,7 @@ passenger-install-nginx-module
 # Choose 2,No: I want to customize my Nginx installation. (for advanced users)
 # Give nginx source code location: /root/openresty-1.9.7.4/bundle/nginx-1.9.7
 # Specify a prefix directory: /opt
-# Confirm will install an an entirely new Nginx installation.
+# Confirm will install an entirely new Nginx installation.
 # Record generated script, like: sh ./configure --prefix='/opt' --with-http_ssl_module --with-http_gzip_static_module --with-http_stub_status_module --with-cc-opt=-Wno-error --with-ld-opt='' --add-module='/usr/local/rvm/gems/ruby-2.2.4/gems/passenger-5.0.27/src/nginx_module'
 # Confirm yes by enter
 cd openresty-1.9.7.4
